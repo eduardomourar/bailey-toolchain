@@ -1,0 +1,17 @@
+---
+de:
+  $ref: ./nls/messages_de.yml
+es:
+  $ref: ./nls/messages_es.yml
+fr:
+  $ref: ./nls/messages_fr.yml
+it:
+  $ref: ./nls/messages_it.yml
+ja:
+  $ref: ./nls/messages_ja.yml
+ko:
+  $ref: ./nls/messages_ko.yml
+pt-BR:
+  $ref: ./nls/messages_pt_BR.yml
+zh:
+  $ref: ./nls/messages_zh.yml
