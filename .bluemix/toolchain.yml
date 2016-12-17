@@ -9,17 +9,15 @@ image: data:image/png;base64,$file(toolchain.png,base64)
 icon: data:image/png+xml;base64,$file(icon.png,base64)
 required: 
  - deploy
- - repo
+ - github
 
-# Github repo - Whitewater Github Enterprise
+# Whitewater GitHub Enterprise repo
 repo:
-  schema:
-    $ref: github.json
-  service-category: github_integrated
+  service_id: github_integrated
   parameters:
-    repo_name: "bailey-{{name}}"
-    repo_url: https://github.ibm.com/cds-sre-org/bailey
-    type: clone
+    repo_name: "{{github.parameters.repo_name}}"
+    repo_url: "{{github.parameters.repo_url}}"
+    type: fork
     has_issues: false
   hidden: [form, description]
 
@@ -55,4 +53,13 @@ deploy:
     dev-region: "{{region}}"
     dev-organization: "{{organization}}"
     dev-space: "dev"
-    app-name: "{{repo.parameters.repo_name}}"
+    app-name: "{{github.parameters.repo_name}}"
+
+# GitHub
+github:
+  schema:
+    $ref: github.json
+  service-category: github_integrated
+  parameters:
+    repo_name: "bailey-{{name}}"
+    repo_url: https://github.ibm.com/cds-sre-org/bailey
