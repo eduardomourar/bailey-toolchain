@@ -13,10 +13,12 @@ required:
 
 # Whitewater GitHub Enterprise repo
 repo:
-  service_id: github_integrated
+  schema:
+    $ref: github.json
+  service-category: github_integrated
   parameters:
-    repo_name: "{{github.parameters.repo_name}}"
-    repo_url: "{{github.parameters.repo_url}}"
+    repo_name: "{{name}}"
+    repo_url: https://github.com/open-toolchain/node-hello-world
     type: fork
     has_issues: false
   hidden: [form, description]
@@ -53,13 +55,4 @@ deploy:
     dev-region: "{{region}}"
     dev-organization: "{{organization}}"
     dev-space: "dev"
-    app-name: "{{github.parameters.repo_name}}"
-
-# GitHub
-github:
-  schema:
-    $ref: github.json
-  service-category: github_integrated
-  parameters:
-    repo_name: "{{name}}"
-    repo_url: https://github.ibm.com/cds-sre-org/bailey
+    app-name: "{{repo.parameters.repo_name}}"
