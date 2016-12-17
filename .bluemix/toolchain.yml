@@ -17,7 +17,7 @@ repo:
   parameters:
     repo_name: "{{name}}"
     repo_url: https://github.ibm.com/ngoh/hello-world
-    type: fork
+    type: clone
     has_issues: false
 
 # Pipelines
