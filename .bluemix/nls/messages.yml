@@ -1,0 +1,10 @@
+---
+name: "Bailey Toolchain"
+description: "With this toolchain, you can develop and deploy a Cloud Foundry application. This toolchain uses Bailey app which can be cloned to your own GitHub repository instead. This toolchain is preconfigured for continuous delivery, source control, blue-green deployment and online editing.\n\nTo get started, click **Create**."
+$deploy.title: "Sample Deploy Stage"
+$deploy.longDescription: "The Delivery Pipeline automates continuous deployment."
+$deploy.appDescription: "The name of your Hello World app."
+$deploy.appName: "App name"
+$region: "Region"
+$organization: "Organization"
+$space: "Space"
