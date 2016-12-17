@@ -62,4 +62,4 @@ github:
   service-category: github_integrated
   parameters:
     repo_name: "bailey-{{name}}"
-    repo_url: https://github.ibm.com/cds-sre-org/bailey
+    repo_url: https://github.com/open-toolchain/node-hello-world
