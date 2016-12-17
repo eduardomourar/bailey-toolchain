@@ -6,7 +6,7 @@ name: "Bailey Toolchain"
 description: "With this toolchain, you can develop and deploy a Cloud Foundry application. This toolchain uses Bailey app which can be cloned to your own GitHub repository instead. This toolchain is preconfigured for continuous delivery, source control, blue-green deployment and online editing.\n\nTo get started, click **Create**."
 version: 0.1
 image: data:image/png;base64,$file(toolchain.png,base64)
-icon: data:image/svg+xml;base64,$file(icon.svg,base64)
+icon: data:image/png+xml;base64,$file(icon.png,base64)
 required: 
  - deploy
  - repo
@@ -16,8 +16,8 @@ repo:
   tool: github_integrated  # Whitewater Github Enterprise
   parameters:
     repo_name: "{{name}}"
-    repo_url: "https://github.ibm.com/cds-sre-org/bailey"
-    type: fork
+    repo_url: "https://github.com/eduardomourar/bailey-toolchain"
+    type: clone
     has_issues: false
 
 # Pipelines
