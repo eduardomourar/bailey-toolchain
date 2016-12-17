@@ -1,0 +1,55 @@
+---
+default_locale: en
+locales: 
+  $ref: locales.yml
+name: "Bailey Toolchain"
+description: "With this toolchain, you can develop and deploy a Cloud Foundry application. This toolchain uses Bailey app which can be cloned to your own GitHub repository instead. This toolchain is preconfigured for continuous delivery, source control, blue-green deployment and online editing.\n\nTo get started, click **Create**."
+version: 0.1
+image: data:image/png;base64,$file(toolchain.png,base64)
+icon: data:image/svg+xml;base64,$file(icon.svg,base64)
+required: 
+ - deploy
+ - repo
+
+# Github repo
+repo:
+  tool: github_integrated  # Whitewater Github Enterprise
+  parameters:
+    repo_name: "{{name}}"
+    repo_url: "https://github.ibm.com/cds-sre-org/bailey"
+    type: fork
+    has_issues: false
+
+# Pipelines
+build:
+  service_id: pipeline
+  parameters:
+    name: "{{name}}"
+    ui-pipeline: true
+    configuration: 
+     content: $file(pipeline.yml)
+     env:
+      REPO: "repo"
+      CF_APP: "{{deploy.parameters.app-name}}"
+      CF_SPACE: "{{deploy.parameters.dev-space}}"
+      CF_ORGANIZATION: "{{deploy.parameters.dev-organization}}"
+      CF_REGION_ID: "{{deploy.parameters.dev-region}}"
+     execute: true
+    services: ["repo"]
+  hidden: ["form"]
+    
+
+# Web IDE
+webide:
+  service_id: orion
+  
+# Deployment
+deploy:
+  schema: 
+    $ref: deploy.json
+  service-category: pipeline
+  parameters:
+    dev-region: "{{region}}"
+    dev-organization: "{{organization}}"
+    dev-space: "dev"
+    app-name: "{{repo.parameters.repo_name}}"
