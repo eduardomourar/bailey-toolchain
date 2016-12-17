@@ -1,7 +1,7 @@
 {
-    "title": "$github.title",
-    "description": "$github.description",
-    "longDescription": "$github.longDescription",
+    "title": "$repo.title",
+    "description": "$repo.description",
+    "longDescription": "$repo.longDescription",
     "properties": {
     },
     "form": [
@@ -10,12 +10,12 @@
       {
         "items": [
             {
-              "title": "$github.sourceRepository"
+              "title": "$repo.sourceRepository"
             },
             {
             },
             {
-              "title": "$github.targetRepository"
+              "title": "$repo.targetRepository"
             },
             {
             },
