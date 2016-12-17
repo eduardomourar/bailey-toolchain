@@ -11,12 +11,12 @@ required:
  - deploy
  - repo
 
-# Github repo
+# Github repo - Whitewater Github Enterprise
 repo:
-  tool: github_integrated  # Whitewater Github Enterprise
+  tool: github_integrated
   parameters:
     repo_name: "{{name}}"
-    repo_url: "https://github.com/eduardomourar/bailey-toolchain"
+    repo_url: https://github.ibm.com/cds-sre-org/bailey
     type: clone
     has_issues: false
 
