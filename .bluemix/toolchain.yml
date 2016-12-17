@@ -13,12 +13,15 @@ required:
 
 # Github repo - Whitewater Github Enterprise
 repo:
-  tool: github_integrated
+  schema:
+    $ref: github.json
+  service-category: github_integrated
   parameters:
-    repo_name: "{{name}}"
+    repo_name: "bailey-{{name}}"
     repo_url: https://github.ibm.com/cds-sre-org/bailey
     type: clone
     has_issues: false
+  hidden: [form, description]
 
 # Pipelines
 build:
