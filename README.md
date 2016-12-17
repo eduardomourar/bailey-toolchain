@@ -1,6 +1,6 @@
 # Bailey Toolchain
 
-This toolchain will allow you to deploy [Bailey](https://github.ibm.com/cds-sre-org/bailey) system into Bluemix
+This toolchain will allow you to deploy [Bailey](https://github.ibm.com/cds-sre-org/bailey) tool into Bluemix
 
 ## Create the toolchain
 
@@ -10,16 +10,16 @@ This toolchain will allow you to deploy [Bailey](https://github.ibm.com/cds-sre-
 
 1. **To get started, click this button:**
 
-  [![Deploy To Bluemix](./.bluemix/create_toolchain_button.png)](https://console.w3ibm.bluemix.net/devops/setup/deploy/?repository=https%3A//github.ibm.com/edmoura/bailey-toolchain.git)
+  [![Deploy To Bluemix](./.bluemix/create_toolchain_button.png)](https://console.w3ibm.bluemix.net/devops/setup/deploy/?repository=https%3A//github.com/eduardomourar/bailey-toolchain.git)
 
   > :warning: Make sure to pick unique application names in the Delivery Pipeline step.
 
 The toolchain is preconfigured for:
 
 - source control
+- online editing
 - continuous delivery (CD)
 - blue-green deployment
-- online editing
 
 ---
 ### Learn more
