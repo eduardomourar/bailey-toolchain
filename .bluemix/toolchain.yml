@@ -8,51 +8,18 @@ version: 0.1
 image: data:image/png;base64,$file(toolchain.png,base64)
 icon: data:image/png+xml;base64,$file(icon.png,base64)
 required: 
- - deploy
- - github
+ - repo
 
 # Whitewater GitHub Enterprise repo
 repo:
-  schema:
-    $ref: github.json
-  service-category: github_integrated
+  service_id: github_integrated
   parameters:
     repo_name: "{{name}}"
     repo_url: https://github.ibm.com/cds-sre-org/bailey
     type: fork
     has_issues: false
-  hidden: [form, description]
-
-# Pipelines
-build:
-  service_id: pipeline
-  parameters:
-    name: "{{name}}"
-    ui-pipeline: true
-    configuration: 
-     content: $file(pipeline.yml)
-     env:
-      REPO: "repo"
-      CF_APP: "{{deploy.parameters.app-name}}"
-      CF_SPACE: "{{deploy.parameters.dev-space}}"
-      CF_ORGANIZATION: "{{deploy.parameters.dev-organization}}"
-      CF_REGION_ID: "{{deploy.parameters.dev-region}}"
-     execute: true
-    services: ["repo"]
-  hidden: ["form"]
     
 
 # Web IDE
 webide:
   service_id: orion
-  
-# Deployment
-deploy:
-  schema: 
-    $ref: deploy.json
-  service-category: pipeline
-  parameters:
-    dev-region: "{{region}}"
-    dev-organization: "{{organization}}"
-    dev-space: "dev"
-    app-name: "{{repo.parameters.repo_name}}"
