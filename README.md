@@ -1,6 +1,6 @@
 # Bailey Toolchain
 
-This toolchain will allow you to deploy [Bailey](https://github.ibm.com/cds-sre-org/bailey) tool into Bluemix
+With this toolchain, you can develop by using a GitHub repository and deploy a [Bailey](https://github.ibm.com/cds-sre-org/bailey) app to Bluemix
 
 ## Create the toolchain
 
