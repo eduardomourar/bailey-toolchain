@@ -16,8 +16,8 @@ repo:
   service_id: github_integrated
   parameters:
     repo_name: "{{name}}"
-    repo_url: https://github.ibm.com/cds-sre-org/bailey
-    type: fork
+    repo_url: https://github.ibm.com/edmoura/bailey-bluemix
+    type: clone
     has_issues: false
 
 # Pipelines
