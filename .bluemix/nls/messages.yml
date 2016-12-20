@@ -1,9 +1,9 @@
 ---
 name: "Bailey Toolchain"
-description: "With this toolchain, you can develop and deploy a Cloud Foundry application. This toolchain uses Bailey app which can be cloned to your own GitHub repository instead. This toolchain is preconfigured for continuous delivery, source control, blue-green deployment and online editing.\n\nTo get started, click **Create**."
-$deploy.title: "Sample Deploy Stage"
+description: "With this toolchain, you can develop by using a GitHub repository and deploy a Bailey app to Bluemix. This toolchain is preconfigured for source control, online editing, continuous delivery and blue-green deployment.\n\nTo get started, click **Create**."
+$deploy.title: "Deploy Stage"
 $deploy.longDescription: "The Delivery Pipeline automates continuous deployment."
-$deploy.appDescription: "The name of your Hello World app."
+$deploy.appDescription: "The name of your Bailey app."
 $deploy.appName: "App name"
 $region: "Region"
 $organization: "Organization"
