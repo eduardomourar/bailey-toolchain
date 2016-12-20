@@ -16,7 +16,7 @@ repo:
   service_id: github_integrated
   parameters:
     repo_name: "{{name}}"
-    repo_url: https://github.ibm.com/ngoh/hello-world
+    repo_url: https://github.ibm.com/cds-sre-org/bailey
     type: fork
     has_issues: false
 
